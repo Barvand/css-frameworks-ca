@@ -11881,4 +11881,8 @@ textarea.form-control-lg {
   object-fit: cover;
 }
 
+.custom-footer-height {
+  height: 50px;
+}
+
 /*# sourceMappingURL=styles.css.map */
