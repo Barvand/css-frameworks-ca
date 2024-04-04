@@ -1,3 +1,9 @@
+$body-bg: #ffffff;
+$secondary: rgb(124, 118, 118); 
+$list-group-bg: rgb(145, 145, 145);
+$list-group-color: white; 
+
+
 .form-signin {
   width: 100%;
   max-width: 330px;
@@ -5,21 +11,41 @@
   margin: 0 auto;
 }
 
-.sr-only {
-    display: none;
+
+.image-login { 
+ width: 100%;
+ height: 300px;
+ object-fit: cover;
 }
 
-$body-bg: #888888;
+.sr-only {
+  display: none;
+}
+
+.my-custom-card { 
+  width: 100%;
+  height: 300px;
+}
+
+.profile-picture {
+  max-height: 100px;
+  max-width: 100px;
+}
 
 
+// Update bootstrap class to fit my needs. 
+.card-img-top { 
+  height: 300px; 
+  object-fit: cover
+}
 
 // scss-docs-start import-stack
 // Configuration
 @import "../../node_modules/bootstrap/scss/functions";
-@import "variables"; 
-@import "variables-dark"; 
+@import "variables";
+@import "variables-dark";
 @import "../../node_modules/bootstrap/scss/maps";
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/utilities";
-
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
