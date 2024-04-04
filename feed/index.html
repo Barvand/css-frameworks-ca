@@ -78,17 +78,21 @@
                 class="list-group-item list-group-item-action d-flex justify-content-between"
                 >Friends<i class="fa-solid fa-user-group"></i
               ></a>
-              <a
-                href="/profile/index.html"
-                class="list-group-item list-group-item-action d-flex justify-content-between"
-                >Profile<i class="fa-solid fa-plus"></i
-              ></a>
-              <div class="col">
-                <p class="h5 mt-2">Post now!</p>
-                <form>
+
+
+              <div class="accordion" id="post-collapsable">
+             <div class="accordion-item">
+             <h2 class="accordion-header">
+              <button class="accordion-button bg-warning text-black" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+               New post
+                 </button>
+               </h2>
+               <div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#post-collapsable">
+                  <div class="accordion-body">
+               <form>
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1"
-                      >What are you think about?</label
+                      >What are you thinking about?</label
                     >
                     <textarea
                       class="form-control"
@@ -98,11 +102,12 @@
                   </div>
                 </form>
                 <button class="btn btn-success">Post now</button>
-                 <label for="myfile"></label>
-                 <input type="file" id="myfile" name="myfile"> 
               </div>
             </div>
           </div>
+      </div>
+    </div>
+  </div>
 
 
       <div class="container">
