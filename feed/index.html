@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Poster - Log in</title>
+    <title>Poster - Your feed</title>
     <link rel="stylesheet" href="/dist/css/styles.css" />
     <script defer src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script
@@ -40,6 +40,7 @@
         </div>
       </nav>
 
+       <div class="container-md">
       <div class="col-md-12 col-lg-3 col-xl-2 position-fixed top-25 start-0 bg-white vh-100 border-right border-3 p-2 d-none d-lg-block">
             <div class="list-group">
               <div class="d-flex align-items-end mb-2">
@@ -109,10 +110,24 @@
   </div>
 
 
-      <div class="container">
+     
         <h1 class="display-6 text-center">My Feed</h1>
+        <div class="col-md-12 col-lg-7 mt-2 mb-2 mx-auto">
+           <div class="form-floating border border-2">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">What are you thinking about? </label>
+        <button class="btn btn-primary w-100">Post now</button>
+       </div>
+       </div>
         <div class="row d-flex justify-content-center">
-          
+          <div class="col-md-12 col-lg-7 mt-2 mb-2 mx-auto">
+            <h6> What feed you want to see? </h6>
+          <ul class="list-group list-group-horizontal d-flex justify-content-between">
+  <a class="list-group-item w-100 list-group-item-action bg-black">Popular</a>
+  <a class="list-group-item w-100 list-group-item-action">Friends</a>
+  <a class="list-group-item w-100 list-group-item-action">New</a>
+</ul>
+</div>
           <div class="col-md-12 col-lg-7 mt-2 mb-2">
             <div class="card my-custom-card h-100">
               <img
@@ -189,8 +204,8 @@
             </div>
           </div>
         </div>
-      </div>
-
+ 
+</div>
            <footer> 
               <div class="col-12 d-lg-none position-fixed bottom-0 end-0 bg-white w-100 ">
                 <div class="row">
@@ -266,6 +281,5 @@
             </div>
             </div>
             </footer>
-
   </body>
 </html>
