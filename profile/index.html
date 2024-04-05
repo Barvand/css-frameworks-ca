@@ -13,12 +13,12 @@
   </head>
 
 
-  <body class="bg-secondary position-relative">
-      <div class="container-fluid bg-primary border-bottom border-3">
+  <body class="bg-secondary position-relative ">
+      <div class="container-fluid bg-primary border-bottom border-3 ">
         <div class="container">
-      <nav class="navbar w-100 p-2 bg-primary">
+      <nav class="navbar bg-primary justify-content-center">
         <div class="container-fluid">
-          <a class="navbar-brand">Poster</a>
+          <img src="/images/poster-logo.png" alt="Poster-logo"> 
           <form>
             <div class="input-group">
               <span class="input-group-text" id="basic-addon1">@</span>
@@ -30,10 +30,7 @@
               />
             </div>
           </form>
-          <div class="d-flex"> 
-            <button type="button" class="btn btn-primary position-relative">
-  <i class="fa-sharp fa-solid fa-gear text-white"></i> <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">+10 <span class="visually-hidden">unread messages</span></span>
-</button>
+          <div> 
             <button type="button" class="btn btn-primary position-relative">
   <i class="fa-solid fa-envelope"> </i> <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">+10 <span class="visually-hidden">unread messages</span></span>
 </button>
@@ -44,18 +41,19 @@
         </div>
       </nav>
 
-      <div class="col-md-12 col-lg-3 col-xl-2 position-fixed top-0 start-0 bg-white vh-100 border-right p-2 d-none d-lg-block">
+      <div class="col-md-12 col-lg-3 col-xl-2 position-fixed top-25 start-0 bg-white vh-100 border-right border-3 p-2 d-none d-lg-block">
             <div class="list-group">
               <div class="d-flex align-items-end mb-2">
                 <img
                   src="/images/bartcryptominer.jpg"
-                  class="profile-picture rounded-circle w-100 border-success border border-3"
+                  class="rounded-circle border-success border border-3 profile-picture-sidemenu"
                 />
-                <p class="text-muted p-1">Logged in as @Vashin.234</p>
+                
+                <p class="p-1">Logged in as <span class="text-muted">@Vashin.234 </span> </p>
               </div>
               <a
-                href="#"
-                class="list-group-item list-group-item-action active d-flex justify-content-between"
+                href="/feed/index.html"
+                class="list-group-item list-group-item-action d-flex justify-content-between"
                 aria-current="true"
                 >Home
                 <i class="fa-sharp fa-solid fa-house align-items-center"></i>
@@ -73,11 +71,11 @@
               <a
                 href="#"
                 class="list-group-item list-group-item-action d-flex justify-content-between"
-                >Friends<i class="fa-solid fa-user-group"></i
+                >Friends<i class="fa-solid fa-user-group "></i
               ></a>
                  <a
                 href="/profile/index.html"
-                class="list-group-item list-group-item-action d-flex justify-content-between"
+                class="list-group-item list-group-item-action d-flex justify-content-between active"
                 >Profile<i class="fa-solid fa-user-group"></i
               ></a>
 
@@ -85,7 +83,7 @@
               <div class="accordion" id="post-collapsable">
              <div class="accordion-item">
              <h2 class="accordion-header">
-              <button class="accordion-button bg-warning text-black" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <button class="accordion-button bg-success text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                New post
                  </button>
                </h2>
@@ -110,7 +108,6 @@
       </div>
     </div>
   </div>
-
 
           <div class="container">
             <div class="d-flex flex-column mx-auto col-12 col-sm-12 col-md-12 col-lg-6">
@@ -146,7 +143,7 @@
                 <button type="button" class="btn btn-primary">Follow</button>
                 </div>
                  <div class="col-5 offset-2">
-               <button type="button" class="btn btn-danger">Message</button>
+               <button type="button" class="btn btn-success">Message</button>
                </div>
                </div>
             </div>
@@ -218,42 +215,52 @@
             
              </body>
 
-            <footer> 
-              <div class="col-12 d-lg-none position-fixed bottom-0 end-0 bg-white w-100 custom-footer-height">
+             <footer> 
+              <div class="col-12 d-lg-none position-fixed bottom-0 end-0 bg-white w-100 ">
                 <div class="row">
             <div class="list-group list-group-horizontal">
               <a
-                href="#"
-                class="list-group-item list-group-item-action active text-center w-50"
+                href="/feed/index.html"
+                class="list-group-item list-group-item-action text-center w-50 h-100 active"
                 aria-current="true"
-                >
+                ><p class="sr-only"> Feed </p>
                 <i class="fa-sharp fa-solid fa-house align-items-center"></i>
               </a>
               <a
                 href="#"
                 class="list-group-item list-group-item-action text-center w-50"
-                ><i class="fa-solid fa-message"></i
+                ><p class="sr-only"> Emails </p><i class="fa-solid fa-message"></i
               ></a>
               <a
                 href="#"
                 class="list-group-item list-group-item-action text-center w-50"
-                ><i class="fa-solid fa-envelope"></i
+                > <p class="sr-only"> Messages </p> <i class="fa-solid fa-envelope"></i
               ></a>
                  <a
                 href="/profile/index.html"
                 class="list-group-item list-group-item-action text-center w-50"
-                ><i class="fa-solid fa-user-group"></i
+                ><p class="sr-only"> Profile </p><i class="fa-solid fa-user-group"></i
               ></a>
-              <div class="accordion" id="post-collapsable">
-             <div class="accordion-item">
-             <h2 class="accordion-header">
-              <button class="accordion-button bg-warning text-black" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-               
-                 </button>
-               </h2>
-               <div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#post-collapsable">
-                  <div class="accordion-body">
-               <form>
+              <!-- Button trigger modal -->
+                <button
+                href="/profile/index.html"
+                class="list-group-item list-group-item-action text-center w-50 bg-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                ><p class="sr-only"> New Post </p><i class="fa-solid fa-circle-plus"></i
+              ></button>
+
+              <!-- Modal -->
+    
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create new post</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1"
                       >What are you thinking about?</label
@@ -266,13 +273,22 @@
                   </div>
                 </form>
                 <button class="btn btn-success">Post now</button>
-              </div>
-            </div>
-          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
-  </div>
+</div>
+
+
+
+              
+            </div>
+            </div>
+            </div>
+            </div>
             </footer>
 
 

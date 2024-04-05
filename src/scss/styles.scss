@@ -1,8 +1,8 @@
 $body-bg: #ffffff;
+$primary: #0d6efd;
 $secondary: rgb(219, 202, 202); 
 $list-group-bg: rgb(145, 145, 145);
 $list-group-color: white; 
-
 
 
 // scss-docs-start import-stack
@@ -48,6 +48,10 @@ $list-group-color: white;
   max-width: 200px;
 }
 
+.profile-picture-sidemenu { 
+  width: 75px;
+}
+
 
 // Update bootstrap class to fit my needs. 
 .card-img-top { 
@@ -55,6 +59,19 @@ $list-group-color: white;
   object-fit: cover
 }
 
-.custom-footer-height { 
-  height: 50px;
+.no-z-index { 
+  z-index: -1;
+}
+.custom-z-index { 
+  z-index: 10000;
+}
+
+.modal-backdrop  { 
+  position: static;
+}
+
+.modal-dialog { 
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
 }

@@ -11876,13 +11876,31 @@ textarea.form-control-lg {
   max-width: 200px;
 }
 
+.profile-picture-sidemenu {
+  width: 75px;
+}
+
 .card-img-top {
   height: 300px;
   object-fit: cover;
 }
 
-.custom-footer-height {
-  height: 50px;
+.no-z-index {
+  z-index: -1;
+}
+
+.custom-z-index {
+  z-index: 10000;
+}
+
+.modal-backdrop {
+  position: static;
+}
+
+.modal-dialog {
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
 }
 
 /*# sourceMappingURL=styles.css.map */
