@@ -29,12 +29,21 @@
     ></script>
   </head>
 
-  <body>
-    <section class="vh-100 align-items-center">
-      <div class="container py-5 h-100">
+  <body class="min-vh-100 d-flex flex-column">
+
+     <header class="sticky-top">
+    <nav class="navbar bg-dark navbar-dark">
+      <div class="container-fluid">
+      <a class="navbar-brand" href="/">Poster</a>
+      </div>
+      </nav>
+    </header>
+
+    <main class="vh-100 align-items-center bg-dark">
+      <div class="container py-5 h-100 ">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-xl-10">
-            <div class="card rounded-3 text-black">
+            <div class="card text-black">
               <div class="row g-0">
                 <div class="col-lg-6 bg-secondary">
                   <div class="card-body p-md-5 mx-md-4">
@@ -95,6 +104,7 @@
                     Create a new account to get access to Poster and Post with
                     your friends
                   </p>
+                  <a href="/profile/register/index.html" class="btn btn-danger"> Create account </a>
                   <img
                     src="images/poster-login2.jpg"
                     class="image-login mt-4"
@@ -111,5 +121,5 @@
         </div>
       </div>
     </section>
-  </body>
+  </main>
 </html>
