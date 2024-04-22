@@ -27,6 +27,7 @@
       src="https://kit.fontawesome.com/43c9e5e89e.js"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="/src/js/index.mjs"> </script>
   </head>
 
   <body class="min-vh-100 d-flex flex-column">
@@ -53,42 +54,23 @@
                     </div>
 
                     <form
-                      class="was-validated"
-                      action="/feed/index.html"
-                      method="GET"
-                    >
+                      id="LoginForm">
+
                       <p>Please login to your account</p>
 
-                      <div class="form-outline mb-4">
-                        <input
-                          type="email"
-                          id="email"
-                          class="form-control"
-                          placeholder="Phone number or email address"
-                        />
-                        <label class="form-label sr-only" for="email"
-                          >Username</label
-                        >
-                      </div>
-
-                      <div class="form-outline mb-4">
-                        <input
-                          type="password"
-                          id="password"
-                          class="form-control"
-                          minlength="8" required
-                          placeholder="Password"
-                        />
-                        <label class="form-label sr-only" for="password"
-                          >Password</label
-                        >
-                      </div>
+                
+                        <label for="email">Email address</label>
+                        <input class="form-control" type="text" name="email" required pattern="^[\w\-.]+@(stud\.)?noroff\.no$" title="Only @(stud.)noroff.no domains are allowed to register">
+                    
+                        <label for="password"> Password</label>
+                        <input class="form-control" type="text" name="password" required minlength="8">
+            
 
                       <div
                         class="text-center pt-1 mb-5 pb-1 d-flex flex-column"
                       >
                         <button
-                          class="btn btn-primary btn-block mb-3"
+                          class="btn btn-primary btn-block mb-3 mt-3"
                           type="submit"
                         >
                           Log in
