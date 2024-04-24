@@ -4,10 +4,8 @@
 
 import { setRegisterFormListener } from "./handlers/register.mjs";
 import { setLoginFormListener } from "./handlers/login.mjs";
-import { createPost } from "./api/posts/create.mjs"
-
-import * as posts from "./api/posts/index.mjs"
-
+import { renderPost } from "./render/post.mjs"
+import * as post from "./api/posts/index.mjs"
 
 const path = location.pathname; 
 
@@ -18,7 +16,30 @@ if (path === "/profile/register/index.html") {
 }
 
 
-createPost({
-    title:" Example", 
-    body: "Also example"
-})
+// updatePost({
+//     id: 11925,
+//     title:" Example", 
+//     body: "Also example but updated instead"
+// })
+
+
+// removePost(11925)
+
+
+// post.createPost()
+// post.updatePost()
+// post.removePost()
+// post.getPost()
+
+if (path === "/feed/index.html") {
+  post.getPosts();
+} else if (path === "/feed/post/index.html") {
+  renderPost();
+}
+
+post.getPost(55).then(console.log)
+
+
+
+
+
