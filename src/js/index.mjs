@@ -5,11 +5,12 @@
 
 import * as listeners from "./handlers/index.mjs"
 import * as postMethods from "./api/posts/index.mjs"
-import { createPostsHTML } from "./render/posts.mjs";
 import * as  render from "./render/index.mjs"
 
 
 const path = location.pathname; 
+
+console.log(path)
 
 if (path === "/profile/register/") { 
     listeners.setRegisterFormListener() 
@@ -17,12 +18,14 @@ if (path === "/profile/register/") {
     listeners.setLoginFormListener()
 } else if (path === "/feed/post/create/") {
   listeners.setCreatePostFormListener();
+} else if (path === "/feed/post/edit/") { 
+  listeners.setUpdatePostFormListener();
 }
 
 
 if (path === "/feed/") {
   render.renderAllPosts();
-} else if (path === "/feed/post/index.html") {
+} else if (path === "/feed/post/") {
   render.renderSinglePost();
 }
 

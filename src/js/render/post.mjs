@@ -7,15 +7,17 @@ export async function renderPost(post) {
   try {
     const wrapperContainer = document.querySelector("#post-page-container");
 
-    // Create container for posts
-    const cardWrap = document.createElement("div");
-    cardWrap.classList.add("col-md-12", "col-lg-7", "mt-2", "mb-2", "mx-auto");
+    const cardWrap = document.createElement("a");
+    cardWrap.classList.add("col-md-12", "col-lg-6", "mt-2", "mb-2");
+    cardWrap.href = `/feed/post/?id=${post.id}`;
+    wrapperContainer.appendChild(cardWrap);
 
-    const postCard = document.createElement("a");
-    postCard.classList.add("card");
-    postCard.href = `/feed/post/index.html?id=${post.id}`;
+    const postCard = document.createElement("div");
+    postCard.classList.add("card", "my-custom-card", "h-100");
+    cardWrap.appendChild(postCard);
 
     // Create image element
+
     const postImage = document.createElement("img");
     postImage.classList.add("card-img-top");
     postImage.alt = post.title; // Assuming title is the property holding the image alt text
@@ -28,14 +30,50 @@ export async function renderPost(post) {
       postImage.src = "/images/dogpost.jpg"; // Replace "default-image.jpg" with your default image URL
     }
 
+    // Append image to post card
+    postCard.appendChild(postImage);
+
+    // The body of the text elements.
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+    postCard.appendChild(cardBody);
+
     // Create and append title element
     const postTitle = document.createElement("h2");
-    postTitle.innerText = post.title; // Assuming title is a property of the post object
+    postTitle.classList.add("display-6");
+    postTitle.innerText = post.title;
+    cardBody.appendChild(postTitle);
 
-    wrapperContainer.appendChild(cardWrap);
-    cardWrap.appendChild(postCard);
-    postCard.appendChild(postImage);
-    postCard.appendChild(postTitle);
+    const postBody = document.createElement("p");
+    postBody.innerText = post.body;
+    cardBody.appendChild(postBody);
+
+    const postTag = document.createElement("p");
+    postTag.innerText = post.id;
+    cardBody.appendChild(postTag);
+
+    //  const postAuthor = document.createElement("p");
+    //  postAuthor.innerText = post.author;
+    //  cardBody.appendChild(postAuthor);
+
+    const divElement = document.createElement("div");
+    divElement.classList.add("d-flex", "justify-content-between", "card-body");
+    postCard.appendChild(divElement);
+
+    const postComments = document.createElement("p");
+    postComments.innerHTML = `<i class="fa-sharp fa-regular fa-heart" aria-hidden="true"> ${post._count.comments} </i>`;
+    divElement.appendChild(postComments);
+
+    const postReactions = document.createElement("p");
+    postReactions.innerHTML = `<i class="fa-regular fa-comment" aria-hidden="true"> ${post._count.reactions} </i>`;
+    divElement.appendChild(postReactions);
+
+    const editPost = document.createElement("a"); 
+    editPost.classList.add("btn", "btn-success", "w-100", "mt-3")
+    editPost.href = `/feed/post/edit/?id=${post.id}`
+    editPost.innerText = `Edit post`
+    cardWrap.appendChild(editPost);
+    
   } catch (error) {
     console.error("Error rendering post:", error);
   }

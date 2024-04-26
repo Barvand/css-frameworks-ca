@@ -13,14 +13,14 @@ container.innerHTML = "";
   posts.forEach((post) => {
     // Create post card element
 
-    const cardWrap = document.createElement("div");
+    const cardWrap = document.createElement("a");
     cardWrap.classList.add(
       "col-md-12",
       "col-lg-6",
       "mt-2",
       "mb-2"
     );
-    cardWrap.href = `/feed/post/index.html?id=${post.id}`;
+    cardWrap.href = `/feed/post/?id=${post.id}`;
     container.appendChild(cardWrap);
 
     const postCard = document.createElement("div");
@@ -62,7 +62,7 @@ container.innerHTML = "";
     cardBody.appendChild(postBody);
 
     const postTag = document.createElement("p");
-    postTag.innerText = post.tags;
+    postTag.innerText = post.id;
     cardBody.appendChild(postTag);
 
     //  const postAuthor = document.createElement("p");
@@ -90,6 +90,3 @@ export async function renderAllPosts() {
   const posts = await getPosts();
   createPostsHTML(posts);
 }
-
-
-renderAllPosts();
