@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -12,8 +12,13 @@
     ></script>
     <script type="module" src="/src/js/index.mjs"> </script>
   </head>
-
-  <body class="bg-secondary position-relative">
+  
+  
+  
+  
+  
+  
+ <body class="bg-secondary position-relative">
       <div class="container-fluid bg-primary border-bottom border-3">
         <div class="container">
       <nav class="navbar bg-primary justify-content-center">
@@ -41,8 +46,8 @@
         </div>
       </nav>
 
-       <main class="container-md col-md-12 col-lg-7 mt-2 mb-2 mx-auto">
-      <div class="col-md-12 col-lg-2 col-xl-2 position-fixed top-0 start-0 bg-white vh-100 border-right border-3 p-2 d-none d-xl-block">
+       <div class="container-md">
+      <div class="col-md-12 col-lg-3 col-xl-2 position-fixed top-25 start-0 bg-white vh-100 border-right border-3 p-2 d-none d-lg-block">
             <div class="list-group">
               <div class="d-flex align-items-end mb-2">
                 <img
@@ -87,52 +92,33 @@
     </div>
   </div>
 
+  <h1 class="display-6 text-center">Create a post</h1>
+        <div class="col-md-12 col-lg-7 mt-2 mb-2 mx-auto">
+             <form id="createPost">
+                  <div class="form-group mb-3">
+                    <label for=""> Title </label>
+                    <input class="form-control" type="text" name="title" required> 
+                    </div>
 
-     
-        <h1 class="display-6 text-center">My Feed</h1>
-        <div class="col-md-12 col-lg-12 mt-2 mb-2 mx-auto">
-           <div class="form-floating border border-2">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-        <label for="floatingTextarea2">What are you thinking about? </label>
-        <button class="btn btn-primary w-100">Post now</button>
-       </div>
-       </div>
-        <div class="row d-flex justify-content-center">
-          <div class="col-md-12 col-lg-12 mt-2 mb-2 mx-auto">
-            <h6> What feed you want to see? </h6>
-          <ul class="list-group list-group-horizontal d-flex justify-content-between">
-  <a class="list-group-item w-100 list-group-item-action bg-success">Popular</a>
-  <a class="list-group-item w-100 list-group-item-action">Friends</a>
-  <a class="list-group-item w-100 list-group-item-action">New</a>
-</ul>
-</div>
-</div>
+                    <div class="form-group mb-3">
+                        <label for=""> Body </label>
+                        <textarea class="form-control" type="text" name="body" required> 
+                        </textarea>
+                    </div>
 
-<div id="feed-container"></div>
-          <div class="col-md-12 col-lg-6 mt-2 mb-2 mx-auto ">
-            <div class="card my-custom-card h-100">
-              <img
-                src="/images/holidaypicture.jpg"
-                class="card-img-top"
-                alt="post-image"
-              />
-              <div class="card-body">
-                <h5 class="card-title">#ChillingOnTheBeach</h5>
-                <p class="text-muted mb-0"> Hanging with the family on the beach in Portugal </p>
-                 <p class="card-text"> <a href="#" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"> @Rickert </a>
-                </p>
-                <div>
-                  <i class="fa-sharp fa-regular fa-heart"> 59 </i>
-                  <i class="fa-sharp fa-solid fa-share"> 20 </i>
-                </div>
-              </div>
-            </div>
-          </div>
-        
+                    
+                
+                     <div class="form-group mb-3">
+                        <label for=""> Media </label>
+                        <input class="form-control" type="url" name="media">
+                    </div>
 
+                  <button class="btn btn-success">Create post</button>
+
+                </form>
  
-      </main>
-          <footer> 
+</div>
+           <footer> 
               <div class="col-12 d-lg-none position-fixed bottom-0 end-0 bg-white w-100 ">
                 <div class="row">
             <div class="list-group list-group-horizontal">
@@ -158,11 +144,11 @@
                 class="list-group-item list-group-item-action text-center w-50"
                 ><p class="sr-only"> Profile </p><i class="fa-solid fa-user-group"></i
               ></a>
-                <a
-                href="/feed/post/create/"
+                <button
+                href="/feed/post/create"
                 class="list-group-item list-group-item-action text-center w-50 bg-success"
                 ><p class="sr-only"> New Post </p><i class="fa-solid fa-circle-plus"></i
-              ></a>
+              ></button>
             </div>
             </div>
             </div>

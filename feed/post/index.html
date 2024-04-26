@@ -53,7 +53,7 @@
                 <p class="p-1">Logged in as <span class="text-muted">@Vashin.234 </span> </p>
               </div>
               <a
-                href="/feed/index.html"
+                href="/feed/"
                 class="list-group-item list-group-item-action d-flex justify-content-between active"
                 aria-current="true"
                 >Home
@@ -75,38 +75,15 @@
                 >Friends<i class="fa-solid fa-user-group "></i
               ></a>
                  <a
-                href="/profile/index.html"
+                href="/profile/"
                 class="list-group-item list-group-item-action d-flex justify-content-between"
                 >Profile<i class="fa-solid fa-user-group"></i
               ></a>
-
-
-              <div class="accordion" id="post-collapsable">
-             <div class="accordion-item">
-             <h2 class="accordion-header">
-              <button class="accordion-button bg-success text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-               New post
-                 </button>
-               </h2>
-               <div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#post-collapsable">
-                  <div class="accordion-body">
-               <form>
-                  <div class="form-group">
-                    <label for="exampleFormControlTextarea1"
-                      >What are you thinking about?</label
-                    >
-                    <textarea
-                      class="form-control"
-                      id="exampleFormControlTextarea1"
-                      rows="3"
-                    ></textarea>
-                  </div>
-                </form>
-                <button class="btn btn-success">Post now</button>
-              </div>
-            </div>
-          </div>
-      </div>
+                <a
+                href="/feed/post/create/"
+                class="list-group-item list-group-item-action bg-success d-flex justify-content-between"
+                > New Post<i class="fa-solid fa-circle-plus"></i
+              ></a>  
     </div>
   </div>
 
@@ -120,16 +97,16 @@
         <button class="btn btn-primary w-100">Post now</button>
        </div>
        </div>
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center" id="post-page-container">
         </div>
  
 </div>
-           <footer> 
+       <footer> 
               <div class="col-12 d-lg-none position-fixed bottom-0 end-0 bg-white w-100 ">
                 <div class="row">
             <div class="list-group list-group-horizontal">
               <a
-                href="/feed/index.html"
+                href="/feed/"
                 class="list-group-item list-group-item-action text-center w-50 h-100 active"
                 aria-current="true"
                 ><p class="sr-only"> Feed </p>
@@ -146,54 +123,15 @@
                 > <p class="sr-only"> Messages </p> <i class="fa-solid fa-envelope"></i
               ></a>
                  <a
-                href="/profile/index.html"
+                href="/profile/"
                 class="list-group-item list-group-item-action text-center w-50"
                 ><p class="sr-only"> Profile </p><i class="fa-solid fa-user-group"></i
               ></a>
-              <!-- Button trigger modal -->
-                <button
-                href="/profile/index.html"
-                class="list-group-item list-group-item-action text-center w-50 bg-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                <a
+                href="/feed/post/create/"
+                class="list-group-item list-group-item-action text-center w-50 bg-success"
                 ><p class="sr-only"> New Post </p><i class="fa-solid fa-circle-plus"></i
-              ></button>
-
-              <!-- Modal -->
-    
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Create new post</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-                  <div class="form-group">
-                    <label for="exampleFormControlTextarea1"
-                      >What are you thinking about?</label
-                    >
-                    <textarea
-                      class="form-control"
-                      id="exampleFormControlTextarea1"
-                      rows="3"
-                    ></textarea>
-                  </div>
-                </form>
-                <button class="btn btn-success">Post now</button>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-              
+              ></a>
             </div>
             </div>
             </div>
