@@ -2,44 +2,28 @@
 
 // console.log(constants.API_SOCIAL_URL);
 
-import { setRegisterFormListener } from "./handlers/register.mjs";
-import { setLoginFormListener } from "./handlers/login.mjs";
-import { renderPost } from "./render/post.mjs"
-import * as post from "./api/posts/index.mjs"
+
+import * as listeners from "./handlers/index.mjs"
+import * as postMethods from "./api/posts/index.mjs"
+import { createPostsHTML } from "./render/posts.mjs";
+import * as  render from "./render/index.mjs"
+
 
 const path = location.pathname; 
 
-if (path === "/profile/register/index.html") { 
-    setRegisterFormListener() 
-} else if (path === "/profile/login/index.html") { 
-    setLoginFormListener()
+if (path === "/profile/register/") { 
+    listeners.setRegisterFormListener() 
+} else if (path === "/profile/login/") { 
+    listeners.setLoginFormListener()
+} else if (path === "/feed/post/create/") {
+  listeners.setCreatePostFormListener();
 }
 
 
-// updatePost({
-//     id: 11925,
-//     title:" Example", 
-//     body: "Also example but updated instead"
-// })
-
-
-// removePost(11925)
-
-
-// post.createPost()
-// post.updatePost()
-// post.removePost()
-// post.getPost()
-
-if (path === "/feed/index.html") {
-  post.getPosts();
+if (path === "/feed/") {
+  render.renderAllPosts();
 } else if (path === "/feed/post/index.html") {
-  renderPost();
+  render.renderSinglePost();
 }
-
-post.getPost(55).then(console.log)
-
-
-
 
 
