@@ -52,9 +52,10 @@ export async function renderPost(post) {
     postTag.innerText = post.id;
     cardBody.appendChild(postTag);
 
-    //  const postAuthor = document.createElement("p");
-    //  postAuthor.innerText = post.author;
-    //  cardBody.appendChild(postAuthor);
+      const postAuthor = document.createElement("p");
+      postAuthor.innerText = `@${post.author.name}`;
+      postAuthor.classList.add("link-danger");
+      cardBody.appendChild(postAuthor);
 
     const divElement = document.createElement("div");
     divElement.classList.add("d-flex", "justify-content-between", "card-body");

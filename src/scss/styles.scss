@@ -5,6 +5,7 @@ $list-group-bg: rgb(145, 145, 145);
 $list-group-color: white; 
 
 
+
 // scss-docs-start import-stack
 // Configuration
 @import "../../node_modules/bootstrap/scss/functions";
@@ -74,4 +75,8 @@ $list-group-color: white;
   top: 50%;
   left: 0%;
   transform: translate(-50%, -50%);
+}
+
+a { 
+  text-decoration: none;
 }
