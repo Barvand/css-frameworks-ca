@@ -4,6 +4,7 @@ import { fetchToken } from "../fetchToken.mjs";
 const action = "/profiles";
 const method = "post";
 const queryParams = "_followers=true&_following=true&_posts=true";
+const getProfilePosts = "/posts"
 
 export async function getProfiles() {
   const getProfileURL = `${API_SOCIAL_URL}${action}?${queryParams}`;
@@ -23,6 +24,6 @@ export async function getProfile(id) {
   const getProfileURL = `${API_SOCIAL_URL}${action}/${id}?${queryParams}`;
   const response = await fetchToken(getProfileURL);
 
-  console.log(response)
+  
   return await response.json();
 }

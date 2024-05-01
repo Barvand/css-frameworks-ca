@@ -34,4 +34,4 @@ if (path === "/feed/") {
 
 if (path === "/profile/") { 
   renderCompleteProfile();
-}
+} 
