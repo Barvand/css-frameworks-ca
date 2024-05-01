@@ -1,11 +1,9 @@
-import { getProfile } from "../api/profiles/profiles.mjs";
+import { getProfile } from "../api/profiles/read.mjs";
 import { createPostsHTML } from "./posts.mjs";
-import { renderAllPosts } from "./posts.mjs";
-
 
 
 export async function createProfilePage(profile) {
-const wrapperContainer = document.querySelector("#profilePage");
+  const wrapperContainer = document.querySelector("#profilePage");
   wrapperContainer.innerHTML = ""; // Clear existing content
 
   // Create container for profile
@@ -118,24 +116,6 @@ const wrapperContainer = document.querySelector("#profilePage");
   container.appendChild(buttonsContainer);
 }
 
-export async function renderProfile() {
-     const queryString = document.location.search;
-     const params = new URLSearchParams(queryString);
-
-     // Get the ID from the query string
-     const id = params.get("id");
-
-     try { 
-  const profile = await getProfile(id);
-
-
-
-  await createProfilePage(profile);
-} catch (error) { 
-      console.error("Error fetching or rendering post:", error);
-  }
-}
-
 
 export async function renderCompleteProfile() {
   // Get the query string from the URL
@@ -153,10 +133,8 @@ export async function renderCompleteProfile() {
     createProfilePage(profile);
 
     // Pass the container ID as a string to renderAllPosts function
-    renderAllPosts("#profilePosts");
   } catch (error) {
     console.error("Error fetching or rendering profile:", error);
   }
 }
 
-renderCompleteProfile();

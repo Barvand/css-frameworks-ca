@@ -1,5 +1,4 @@
 import { API_SOCIAL_URL } from "../constants.mjs";
-
 import { fetchToken } from "../fetchToken.mjs";
 
 const action = "/profiles";
@@ -27,7 +26,3 @@ export async function getProfile(id) {
   console.log(response)
   return await response.json();
 }
-
-
-
-

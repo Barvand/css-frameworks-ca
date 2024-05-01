@@ -29,8 +29,6 @@ if (form) {
     // Retrieve current user details from local storage
     const currentUser = JSON.parse(localStorage.getItem("profile"));
 
-    console.log(currentUser.name)
-
     // Add a check to ensure that the post belongs to the current user
     if (post.author !== currentUser.id) {
       // Display an error message

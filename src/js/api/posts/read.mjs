@@ -7,6 +7,7 @@
     import { fetchToken } from "../fetchToken.mjs";
 
     const action = "/posts";
+    const comment = "comment"; 
     const method = "post";
     const queryParams = "_author=true&_reactions=true&_comments=true";
 
@@ -28,4 +29,7 @@ export async function getPost(id) {
   const response = await fetchToken(getPostURL);
   return await response.json();
 }
+
+
+
 

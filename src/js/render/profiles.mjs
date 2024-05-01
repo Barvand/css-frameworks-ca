@@ -1,6 +1,4 @@
-import { getProfiles } from "../api/profiles/profiles.mjs";
-
-
+import { getProfiles } from "../api/profiles/read.mjs";
 
 export async function createProfilesPageHTML(profiles) {
   const wrapperContainer = document.querySelector("#profilesPage");
@@ -29,6 +27,7 @@ export async function createProfilesPageHTML(profiles) {
     profileImage.src = profile.avatar; // Assuming avatar is the property holding the image URL
     profileImage.alt = profile.name; // Assuming name is the property holding the image alt text
     profileCard.appendChild(profileImage);
+    
 
     // Create card body
     const cardBody = document.createElement("div");
@@ -45,8 +44,6 @@ export async function createProfilesPageHTML(profiles) {
     const profileFollowers = document.createElement("p");
     profileFollowers.innerText = `Followers ${profile.followers.length}`; // Assuming description is the property holding the profile description
     cardBody.appendChild(profileFollowers);
-
-    
   });
 }
 
@@ -54,6 +51,5 @@ export async function renderAllProfiles() {
   const profiles = await getProfiles();
   await createProfilesPageHTML(profiles);
 }
-
 
 

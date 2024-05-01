@@ -1,5 +1,5 @@
 import { getPost } from "../api/posts/read.mjs";
-
+import { getProfile } from "../api/profiles/read.mjs";
 // calling the individual post through this page instead of the index file. 
 // As I did not figure out how yet. Due to the query parameters
 
@@ -7,7 +7,7 @@ export async function renderPost(post) {
   try {
     const wrapperContainer = document.querySelector("#post-page-container");
 
-    const cardWrap = document.createElement("a");
+    const cardWrap = document.createElement("div");
     cardWrap.classList.add("col-md-12", "col-lg-6", "mt-2", "mb-2");
     cardWrap.href = `/feed/post/?id=${post.id}`;
     wrapperContainer.appendChild(cardWrap);
@@ -52,10 +52,22 @@ export async function renderPost(post) {
     postTag.innerText = post.id;
     cardBody.appendChild(postTag);
 
-      const postAuthor = document.createElement("p");
-      postAuthor.innerText = `@${post.author.name}`;
-      postAuthor.classList.add("link-danger");
-      cardBody.appendChild(postAuthor);
+  const postAvatar = document.createElement("img");
+  postAvatar.src = post.author.avatar;
+  postAvatar.classList.add(
+    "rounded-circle",
+    "border-success",
+    "border",
+    "border-3",
+    "profile-picture-posts"
+  );
+  cardBody.appendChild(postAvatar);
+    
+    const postAuthor = document.createElement("a");
+    postAuthor.innerText = `@${post.author.name}`;
+    postAuthor.classList.add("link-danger");
+    postAuthor.href = `/profile/?id=${post.author.name}`;
+    cardBody.appendChild(postAuthor);
 
     const divElement = document.createElement("div");
     divElement.classList.add("d-flex", "justify-content-between", "card-body");
@@ -69,12 +81,11 @@ export async function renderPost(post) {
     postReactions.innerHTML = `<i class="fa-regular fa-comment" aria-hidden="true"> ${post._count.reactions} </i>`;
     divElement.appendChild(postReactions);
 
-    const editPost = document.createElement("a"); 
-    editPost.classList.add("btn", "btn-success", "w-100", "mt-3")
-    editPost.href = `/feed/post/edit/?id=${post.id}`
-    editPost.innerText = `Edit post`
+    const editPost = document.createElement("a");
+    editPost.classList.add("btn", "btn-success", "w-100", "mt-3");
+    editPost.href = `/feed/post/edit/?id=${post.id}`;
+    editPost.innerText = `Edit post`;
     cardWrap.appendChild(editPost);
-    
   } catch (error) {
     console.error("Error rendering post:", error);
   }
@@ -84,13 +95,11 @@ export async function renderSinglePost() {
   // Get the post ID from the query string
   const queryString = document.location.search;
   const params = new URLSearchParams(queryString);
-
-  // Get the ID from the query string
-  const id = params.get("id");
-
+  const id = params.get("id"); // Extract the ID from the query string
   try {
     // Fetch the post data based on the ID
     const post = await getPost(id);
+
 
     // Render the post with the fetched data
     renderPost(post);
