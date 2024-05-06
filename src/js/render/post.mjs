@@ -19,7 +19,7 @@ export async function renderPost(post) {
     // Create image element
 
     const postImage = document.createElement("img");
-    postImage.classList.add("card-img-top");
+    postImage.classList.add("card-img-post");
     postImage.alt = post.title; // Assuming title is the property holding the image alt text
 
     // Check if post has media

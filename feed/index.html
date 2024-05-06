@@ -99,13 +99,25 @@
        </div>
         <div class="row d-flex justify-content-center">
           <div class="col-md-12 col-lg-12 mt-2 mb-2 mx-auto">
-            <h6> What feed you want to see? </h6>
+            <h2 class="text-center"> Sort posts by category or search by ID </h2>
           <ul class="list-group list-group-horizontal d-flex justify-content-between">
   <a class="list-group-item w-100 list-group-item-action bg-success">Popular</a>
   <a class="list-group-item w-100 list-group-item-action">Friends</a>
   <a class="list-group-item w-100 list-group-item-action">New</a>
 </ul>
 </div>
+<form>
+            <div class="input-group">
+              <input
+                id="searchBar"
+                type="text"
+                class="form-control"
+                placeholder="Username"
+                aria-label="Username"
+              />
+              <button class="input-group-text" id="search"><i class="fa fa-paper-plane icon-link-hover"> </i></button>
+            </div>
+          </form>
 </div>
 
 <div id="feed-container" class="row d-flex justify-content-center">

@@ -1,24 +1,12 @@
 import { getPosts } from "../api/posts/read.mjs";
 
-export async function createPostsHTML(posts, container) {
-  // Create container for posts if not provided
-  if (!container) {
-    console.error("Container element is not provided.");
-    return;
-  }
-
-  // Clear container
-  container.innerHTML = "";
-
-  // Iterate through posts
-  posts.forEach((post) => {
- 
-
+export async function createPostsHTML(post, parentElement) {
+  
     // Create post card element
     const cardWrap = document.createElement("a");
     cardWrap.classList.add("col-md-12", "col-lg-6", "mt-2", "mb-2");
     cardWrap.href = `/feed/post/?id=${post.id}`;
-    container.appendChild(cardWrap);
+    parentElement.appendChild(cardWrap);
 
     const postCard = document.createElement("div");
     postCard.classList.add("card", "my-custom-card", "h-100");
@@ -94,8 +82,22 @@ export async function createPostsHTML(posts, container) {
     const postReactions = document.createElement("p");
     postReactions.innerHTML = `<i class="fa-regular fa-comment" aria-hidden="true"> ${post._count.reactions} </i>`;
     divElement.appendChild(postReactions);
-  });
-}
+  };
+
+
+export async function renderAllPosts(parentElement) {
+  try {
+
+    parentElement.innerHTML = "";
+    const posts = await getPosts(); 
+    
+    posts.forEach(post => {
+      createPostsHTML(post, parentElement);
+    });
+  } catch (error) {
+    console.error("Error rendering posts:", error);
+  }
+};
 
 
 
@@ -122,8 +124,7 @@ export async function createProfileData(profiles, container) {
     profileAvatar.classList.add("card-img-top");
     profileAvatar.alt = profile.avatar;
     profileAvatar.src = profile.avatar;
-    cardWrap.appendChild(profileAvatar)
-  
+    cardWrap.appendChild(profileAvatar);
 
     // Check if post has media
     if (profileAvatar) {
@@ -132,17 +133,5 @@ export async function createProfileData(profiles, container) {
       // If no media available, set a default picture
       profileAvatar.src = "/images/dogpost.jpg"; // Replace "default-image.jpg" with your default image URL
     }
-
   });
-}
-
-export async function renderAllPosts(containerId) {
-  const container = document.querySelector(containerId);
-  if (!container) {
-    console.error("Container element not found.");
-    return;
-  }
-
-  const posts = await getPosts();
-  createPostsHTML(posts, container);
 }

@@ -63,7 +63,15 @@ $list-group-color: white;
 // Update bootstrap class to fit my needs. 
 .card-img-top { 
   height: 300px; 
-  object-fit: cover
+  object-fit: cover;
+  padding: 5px;
+}
+
+.card-img-post { 
+  height: 500px; 
+  object-fit: contain;
+  object-position: center;
+  padding: 5px;
 }
 
 .no-z-index { 

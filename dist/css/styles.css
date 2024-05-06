@@ -11889,6 +11889,14 @@ textarea.form-control-lg {
 .card-img-top {
   height: 300px;
   object-fit: cover;
+  padding: 5px;
+}
+
+.card-img-post {
+  height: 500px;
+  object-fit: contain;
+  object-position: center;
+  padding: 5px;
 }
 
 .no-z-index {

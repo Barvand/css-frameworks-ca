@@ -67,8 +67,6 @@ export async function createProfilePostsHTML(profile) {
 }
 
 
-
-
 export async function renderProfilePosts() {
   
   try {
@@ -80,10 +78,9 @@ export async function renderProfilePosts() {
       return;
     }
 
-    const profile = await getProfile(id); // Await the promise returned by getProfile
+    const profile = await getProfile(id); 
 
-    console.log(profile)
-    createProfilePostsHTML(profile); // Assuming profile object has a 'posts' property
+    createProfilePostsHTML(profile);
   } catch (error) {
     console.error("Error rendering profile posts:", error);
   }
