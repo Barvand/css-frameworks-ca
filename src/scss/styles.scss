@@ -5,6 +5,7 @@ $list-group-bg: rgb(145, 145, 145);
 $list-group-color: white; 
 
 
+
 // scss-docs-start import-stack
 // Configuration
 @import "../../node_modules/bootstrap/scss/functions";
@@ -48,6 +49,12 @@ $list-group-color: white;
   max-width: 200px;
 }
 
+.profile-picture-posts { 
+   height: 75px;
+   width: 75px;
+   object-fit: cover; 
+}
+
 .profile-picture-sidemenu { 
   width: 75px;
 }
@@ -56,7 +63,15 @@ $list-group-color: white;
 // Update bootstrap class to fit my needs. 
 .card-img-top { 
   height: 300px; 
-  object-fit: cover
+  object-fit: cover;
+  padding: 5px;
+}
+
+.card-img-post { 
+  height: 500px; 
+  object-fit: contain;
+  object-position: center;
+  padding: 5px;
 }
 
 .no-z-index { 
@@ -74,4 +89,8 @@ $list-group-color: white;
   top: 50%;
   left: 0%;
   transform: translate(-50%, -50%);
+}
+
+a { 
+  text-decoration: none;
 }

@@ -10,6 +10,7 @@
       src="https://kit.fontawesome.com/43c9e5e89e.js"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="/src/js/index.mjs"> </script>
   </head>
 
   <body class="bg-secondary position-relative">
@@ -40,8 +41,8 @@
         </div>
       </nav>
 
-       <div class="container-md">
-      <div class="col-md-12 col-lg-3 col-xl-2 position-fixed top-25 start-0 bg-white vh-100 border-right border-3 p-2 d-none d-lg-block">
+       <main class="container-md col-md-12 col-lg-7 mt-2 mb-2 mx-auto">
+      <div class="col-md-12 col-lg-2 col-xl-2 position-fixed top-0 start-0 bg-white vh-100 border-right border-3 p-2 d-none d-xl-block">
             <div class="list-group">
               <div class="d-flex align-items-end mb-2">
                 <img
@@ -52,7 +53,7 @@
                 <p class="p-1">Logged in as <span class="text-muted">@Vashin.234 </span> </p>
               </div>
               <a
-                href="/feed/index.html"
+                href="/feed/"
                 class="list-group-item list-group-item-action d-flex justify-content-between active"
                 aria-current="true"
                 >Home
@@ -74,45 +75,22 @@
                 >Friends<i class="fa-solid fa-user-group "></i
               ></a>
                  <a
-                href="/profile/index.html"
+                href="/profile/"
                 class="list-group-item list-group-item-action d-flex justify-content-between"
                 >Profile<i class="fa-solid fa-user-group"></i
               ></a>
-
-
-              <div class="accordion" id="post-collapsable">
-             <div class="accordion-item">
-             <h2 class="accordion-header">
-              <button class="accordion-button bg-success text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-               New post
-                 </button>
-               </h2>
-               <div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#post-collapsable">
-                  <div class="accordion-body">
-               <form>
-                  <div class="form-group">
-                    <label for="exampleFormControlTextarea1"
-                      >What are you thinking about?</label
-                    >
-                    <textarea
-                      class="form-control"
-                      id="exampleFormControlTextarea1"
-                      rows="3"
-                    ></textarea>
-                  </div>
-                </form>
-                <button class="btn btn-success">Post now</button>
-              </div>
-            </div>
-          </div>
-      </div>
+                <a
+                href="/feed/post/create/"
+                class="list-group-item list-group-item-action bg-success d-flex justify-content-between"
+                > New Post<i class="fa-solid fa-circle-plus"></i
+              ></a>  
     </div>
   </div>
 
 
      
         <h1 class="display-6 text-center">My Feed</h1>
-        <div class="col-md-12 col-lg-7 mt-2 mb-2 mx-auto">
+        <div class="col-md-12 col-lg-12 mt-2 mb-2 mx-auto">
            <div class="form-floating border border-2">
         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
         <label for="floatingTextarea2">What are you thinking about? </label>
@@ -120,101 +98,39 @@
        </div>
        </div>
         <div class="row d-flex justify-content-center">
-          <div class="col-md-12 col-lg-7 mt-2 mb-2 mx-auto">
-            <h6> What feed you want to see? </h6>
+          <div class="col-md-12 col-lg-12 mt-2 mb-2 mx-auto">
+            <h2 class="text-center"> Sort posts by category or search by ID </h2>
           <ul class="list-group list-group-horizontal d-flex justify-content-between">
   <a class="list-group-item w-100 list-group-item-action bg-success">Popular</a>
   <a class="list-group-item w-100 list-group-item-action">Friends</a>
   <a class="list-group-item w-100 list-group-item-action">New</a>
 </ul>
 </div>
-          <div class="col-md-12 col-lg-7 mt-2 mb-2">
-            <div class="card my-custom-card h-100">
-              <img
-                src="/images/holidaypicture.jpg"
-                class="card-img-top"
-                alt="post-image"
+<form>
+            <div class="input-group">
+              <input
+                id="searchBar"
+                type="text"
+                class="form-control"
+                placeholder="Type in specific ID or title"
+                aria-label="ID or Title"
               />
-              <div class="card-body">
-                <h5 class="card-title">#ChillingOnTheBeach</h5>
-                <p class="text-muted mb-0"> Hanging with the family on the beach in Portugal </p>
-                 <p class="card-text"> <a href="#" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"> @Rickert </a>
-                </p>
-                <div>
-                  <i class="fa-sharp fa-regular fa-heart"> 59 </i>
-                  <i class="fa-sharp fa-solid fa-share"> 20 </i>
-                </div>
-              </div>
+              <button class="input-group-text" id="search"><i class="fa fa-paper-plane icon-link-hover"> </i></button>
             </div>
-          </div>
-          <div class="col-md-12 col-lg-7  mt-2 mb-2">
-            <div class="card my-custom-card h-100">
-              <img
-                src="/images/dogpost.jpg"
-                class="card-img-top"
-                alt="post-image"
-              />
-              <div class="card-body">
-                <h5 class="card-title">#PhotoshootWithRennie</h5>
-                <p class="text-muted mb-0"> Check out my beautiful photoshoot with my dog Rennie! </p>
-                 <p class="card-text"> <a href="#" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"> @RJohnson </a>
-                </p>
-                <div>
-                  <i class="fa-sharp fa-regular fa-heart"> 5889 </i>
-                  <i class="fa-sharp fa-solid fa-share"> 332 </i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-12 col-lg-7 mt-2 mb-2">
-            <div class="card my-custom-card h-100">
-              <img
-                src="/images/bitcoin50.jpg"
-                class="card-img-top"
-                alt="post-image"
-              />
-              <div class="card-body">
-                <h5 class="card-title">#Bitcoin</h5>
-                <p class="text-muted mb-0"> Bitcoin is making crazy gains! BE PREPARED FOLKS! </p>
-               <p class="card-text"> <a href="#" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"> @TheDigitalMiner </a>
-                </p>
-                <div>
-                  <i class="fa-sharp fa-regular fa-heart"> 8558 </i>
-                  <i class="fa-sharp fa-solid fa-share"> 99 </i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-12 col-lg-7 mt-2 mb-2">
-            <div class="card my-custom-card h-100">
-              <img
-                src="/images/dogpost.jpg"
-                class="card-img-top"
-                alt="post-image"
-              />
-              <div class="card-body">
-                <div class="card-body">
-                  <h5 class="card-title">Out with the family</h5>
-                  <p class="card-text"> <a href="#" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"> @Rickert </a>
-                </p>
-                  <div>
-                    <i class="fa-sharp fa-regular fa-heart"> 59 </i>
-                    <i class="fa-sharp fa-solid fa-share"> 20 </i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
- 
+          </form>
 </div>
-           <footer> 
+
+<div id="feed-container" class="row d-flex justify-content-center">
+  
+</div>
+ 
+      </main>
+          <footer> 
               <div class="col-12 d-lg-none position-fixed bottom-0 end-0 bg-white w-100 ">
                 <div class="row">
             <div class="list-group list-group-horizontal">
               <a
-                href="/feed/index.html"
+                href="/feed/"
                 class="list-group-item list-group-item-action text-center w-50 h-100 active"
                 aria-current="true"
                 ><p class="sr-only"> Feed </p>
@@ -231,54 +147,15 @@
                 > <p class="sr-only"> Messages </p> <i class="fa-solid fa-envelope"></i
               ></a>
                  <a
-                href="/profile/index.html"
+                href="/profile/"
                 class="list-group-item list-group-item-action text-center w-50"
                 ><p class="sr-only"> Profile </p><i class="fa-solid fa-user-group"></i
               ></a>
-              <!-- Button trigger modal -->
-                <button
-                href="/profile/index.html"
-                class="list-group-item list-group-item-action text-center w-50 bg-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                <a
+                href="/feed/post/create/"
+                class="list-group-item list-group-item-action text-center w-50 bg-success"
                 ><p class="sr-only"> New Post </p><i class="fa-solid fa-circle-plus"></i
-              ></button>
-
-              <!-- Modal -->
-    
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Create new post</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-                  <div class="form-group">
-                    <label for="exampleFormControlTextarea1"
-                      >What are you thinking about?</label
-                    >
-                    <textarea
-                      class="form-control"
-                      id="exampleFormControlTextarea1"
-                      rows="3"
-                    ></textarea>
-                  </div>
-                </form>
-                <button class="btn btn-success">Post now</button>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-              
+              ></a>
             </div>
             </div>
             </div>

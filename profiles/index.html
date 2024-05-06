@@ -3,19 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Poster - Profile page</title>
+    <title>Poster - Your feed</title>
     <link rel="stylesheet" href="/dist/css/styles.css" />
     <script defer src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="/src/js/index.mjs"></script>
     <script
       src="https://kit.fontawesome.com/43c9e5e89e.js"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="/src/js/index.mjs"> </script>
   </head>
 
-
-  <body class="bg-secondary position-relative ">
-      <div class="container-fluid bg-primary border-bottom border-3 ">
+  <body class="bg-secondary position-relative">
+      <div class="container-fluid bg-primary border-bottom border-3">
         <div class="container">
       <nav class="navbar bg-primary justify-content-center">
         <div class="container-fluid">
@@ -42,7 +41,8 @@
         </div>
       </nav>
 
-      <div class="col-md-12 col-lg-3 col-xl-2 position-fixed top-25 start-0 bg-white vh-100 border-right border-3 p-2 d-none d-lg-block">
+       <main class="container-md col-md-12 col-lg-7 mt-2 mb-2 mx-auto">
+      <div class="col-md-12 col-lg-2 col-xl-2 position-fixed top-0 start-0 bg-white vh-100 border-right border-3 p-2 d-none d-xl-block">
             <div class="list-group">
               <div class="d-flex align-items-end mb-2">
                 <img
@@ -87,18 +87,51 @@
     </div>
   </div>
 
-          <div class="container" id="profilePage">
-            
+
+     
+        <h1 class="display-6 text-center">My Feed</h1>
+        <div class="col-md-12 col-lg-12 mt-2 mb-2 mx-auto">
+           <div class="form-floating border border-2">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">What are you thinking about? </label>
+        <button class="btn btn-primary w-100">Post now</button>
+       </div>
+       </div>
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-12 col-lg-12 mt-2 mb-2 mx-auto">
+            <h6> What feed you want to see? </h6>
+          <ul class="list-group list-group-horizontal d-flex justify-content-between">
+  <a class="list-group-item w-100 list-group-item-action bg-success">Popular</a>
+  <a class="list-group-item w-100 list-group-item-action">Friends</a>
+  <a class="list-group-item w-100 list-group-item-action">New</a>
+</ul>
+</div>
+</div>
+
+          <div class="col-md-12 col-lg-6 mt-2 mb-2 mx-auto" id="profilesPage">
+            <div class="card my-custom-card h-100">
+              <img
+                src="/images/holidaypicture.jpg"
+                class="card-img-top"
+                alt="post-image"
+              />
+              <div class="card-body">
+                <h5 class="card-title">#ChillingOnTheBeach</h5>
+                <p class="text-muted mb-0"> Hanging with the family on the beach in Portugal </p>
+                 <p class="card-text"> <a href="#" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"> @Rickert </a>
+                </p>
+                <div>
+                  <i class="fa-sharp fa-regular fa-heart"> 59 </i>
+                  <i class="fa-sharp fa-solid fa-share"> 20 </i>
+                </div>
+              </div>
             </div>
+          </div>
+        
 
-            <div class="row d-flex justify-content-center mx-auto col-12 col-sm-12 col-md-12 col-lg-6" id="profilePosts">
-
-              
-            </div>
-            
-             </body>
-
-        <footer> 
+ 
+      </main>
+          <footer> 
               <div class="col-12 d-lg-none position-fixed bottom-0 end-0 bg-white w-100 ">
                 <div class="row">
             <div class="list-group list-group-horizontal">
@@ -134,8 +167,5 @@
             </div>
             </div>
             </footer>
-
-
-
-    
-          </html>
+  </body>
+</html>

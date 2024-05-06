@@ -11876,6 +11876,12 @@ textarea.form-control-lg {
   max-width: 200px;
 }
 
+.profile-picture-posts {
+  height: 75px;
+  width: 75px;
+  object-fit: cover;
+}
+
 .profile-picture-sidemenu {
   width: 75px;
 }
@@ -11883,6 +11889,14 @@ textarea.form-control-lg {
 .card-img-top {
   height: 300px;
   object-fit: cover;
+  padding: 5px;
+}
+
+.card-img-post {
+  height: 500px;
+  object-fit: contain;
+  object-position: center;
+  padding: 5px;
 }
 
 .no-z-index {
@@ -11901,6 +11915,10 @@ textarea.form-control-lg {
   top: 50%;
   left: 0%;
   transform: translate(-50%, -50%);
+}
+
+a {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
